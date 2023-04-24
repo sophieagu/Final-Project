@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 function CycleForm ( {onSubmit} ) {
     const [cycleLength, setCycleLength] = useState("");
@@ -7,7 +8,7 @@ function CycleForm ( {onSubmit} ) {
 
     return (
         <form>
-            
+            <Text>My Form</Text>
         </form>
     );
 };
