@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Hello There! Choose an option below:</Text>
+      <Button title="Edit Form" Button/>
       <StatusBar style="auto" />
     </View>
   );
