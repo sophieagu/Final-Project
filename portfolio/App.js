@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Welcome Back! Choose an option below:</Text> <br></br>
-      <Button title="Edit Form" onPress={() => {CycleForm}} Button/> <br></br>
+      <Button title="Edit Form" onPress={() => navigation.navigate('CycleForm', {})} Button/> <br></br>
       <Button title="My Calendar" Button/> <br></br> <br></br>
       <Text>Select a Phase:</Text> <br></br>
       <Button title="Menstruation" Button/> <br></br>
