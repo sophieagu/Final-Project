@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import React, {useState} from "react";
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import CycleForm from '/components/CycleForm';
+//import CycleForm from '/components/CycleForm';
 
 export default function App() {
   const Navigation = useNavigation();
