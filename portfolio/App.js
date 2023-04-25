@@ -6,17 +6,13 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 export default function App() {
   //const Navigation = useNavigation();
   return (
-    <View style = {styles.container}>
-        <Text>Welcome Back! Choose an option below:</Text> <br></br>
-        <Button title="Edit Form" Button/> <br></br>
-        <Button title="My Calendar"  Button/> <br></br> <br></br>
-        <Text>Select a Phase:</Text> <br></br>
-        <Button title="Menstruation"  Button/> <br></br>
-        <Button title="Follicular Phase" Button/> <br></br>
-        <Button title="Ovulation" Button/> <br></br>
-        <Button title="Luteal Phase" Button/> <br></br>
-        <StatusBar style="auto" />
-      </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="DurationExercise" component={DurationExercise} />
+        <Stack.Screen name="RepetitionExercise" component={RepetitionExercise} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
