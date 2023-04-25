@@ -8,9 +8,7 @@ function CycleForm ( {onSubmit} ) {
     const [lastPeriod, setLastPeriod] = useState("");
 
     return (
-       
-            <Text>My Form</Text>
-       
+        <Text>My Form</Text>
     );
 };
 
