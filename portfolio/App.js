@@ -2,14 +2,22 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import React, {useState} from "react";
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import CycleForm from "./src/components/CycleForm";
+import CycleForm from "./components/CycleForm";
 
 export default function App() {
-  const navigation = useNavigation();
+  const Navigation = useNavigation();
   return (
     <View style={styles.container}>
+      <NavigationContainer>
+      <Navigation.Navigator initialRouteName="Home">
+        <Navigation.Screen name="Home" component={HomeScreen} />
+        <Navigation.Screen name="CycleForm" component={CycleForm} />
+        <Navigation.Screen name="PhaseScreen" component={ToDoScreen} />
+
+      </Navigation.Navigator>
+    </NavigationContainer>
       <Text>Welcome Back! Choose an option below:</Text> <br></br>
-      <Button title="Edit Form" onPress={() => navigation.navigate('CycleForm')} Button/> <br></br>
+      <Button title="Edit Form" onPress={() => Navigation.navigate('CycleForm')} Button/> <br></br>
       <Button title="My Calendar" Button/> <br></br> <br></br>
       <Text>Select a Phase:</Text> <br></br>
       <Button title="Menstruation" Button/> <br></br>
