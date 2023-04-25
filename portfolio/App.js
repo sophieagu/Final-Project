@@ -13,7 +13,7 @@ export default function App() {
         <Navigation.Screen name="Home" component={HomeScreen} />
         <Navigation.Screen name="CycleForm" component={CycleForm} />
         <Navigation.Screen name="PhaseScreen" component={ToDoScreen} />
-
+        <Navigation.Screen name="CalendarScreen" component={CalendarScreen} />
       </Navigation.Navigator>
     </NavigationContainer>
       <Text>Welcome Back! Choose an option below:</Text> <br></br>
