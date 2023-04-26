@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import { Text, Button, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
+const Navigation = useNavigation();
+
 const Home = () => {
-    const Navigation = useNavigation();
     return (
         <View style = {styles.container}>
             <Text>Welcome Back! Choose an option below:</Text> <br></br>
