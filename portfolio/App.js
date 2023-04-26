@@ -6,7 +6,7 @@ import HomeScreen from './src/components/HomeScreen';
 import PhaseScreen from './src/components/PhaseScreen';
 import CalendarScreen from './src/components/CalendarScreen';
 
-export default function App() {
+function App() {
   const Stack = useNavigation();
   return (
     <NavigationContainer>
@@ -19,4 +19,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+export default App;
 
