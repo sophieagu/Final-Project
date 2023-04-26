@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import CycleForm from './src/components/CycleForm';
-import HomeScreen from '/components/HomeScreen';
+import HomeScreen from './components/HomeScreen';
 import PhaseScreen from './components/PhaseScreen';
 import CalendarScreen from './components/CalendarScreen';
 
