@@ -10,7 +10,8 @@ const Home = () => {
             <Button title="Edit Form" onPress={() => Navigation.navigate('CycleForm')} Button/> <br></br>
             <Button title="My Calendar"  onPress={() => Navigation.navigate('CalendarScreen')} Button/> <br></br> <br></br>
             <Text>Select a Phase:</Text> <br></br>
-            <Button title="Menstruation"  onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>                <Button title="Follicular Phase"  onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>
+            <Button title="Menstruation"  onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>                
+            <Button title="Follicular Phase"  onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>
             <Button title="Ovulation" onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>
             <Button title="Luteal Phase" onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>
             <StatusBar style="auto" />
