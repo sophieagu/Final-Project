@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Text, Button, View } from "react-native";
+import { StyleSheet, Text, Button, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
