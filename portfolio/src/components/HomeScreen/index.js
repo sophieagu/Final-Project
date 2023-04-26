@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const Navigation = useNavigation();
 
-const Home = () => {
+const HomeScreen = () => {
     return (
         <View style = {styles.container}>
             <Text>Welcome Back! Choose an option below:</Text> <br></br>
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
   });
   
 
-export default Home;
+export default HomeScreen;
