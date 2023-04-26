@@ -7,8 +7,8 @@ const HomeScreen = () => {
     const Navigation = useNavigation();
     return (
         <View style = {styles.container}>
-            <Text>Welcome Back! Choose an option below:</Text> <br></br>
-            <Button title="Edit Form" onPress={() => Navigation.navigate('CycleForm')} Button/> <br></br>
+            <Text style = {bolds.container}>Welcome Back! Choose an option below:</Text> <br></br>
+            <Button title="Update Cycle Information" onPress={() => Navigation.navigate('CycleForm')} Button/> <br></br>
             <Button title="My Calendar"  onPress={() => Navigation.navigate('CalendarScreen')} Button/> <br></br> <br></br>
             <Text>Select a Phase:</Text> <br></br>
             <Button title="Menstruation"  onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>                
@@ -23,6 +23,16 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  });
+
+  const bolds = StyleSheet.create({
+    container: {
+      flex: 1,
+      fontWeight: "bold",
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
