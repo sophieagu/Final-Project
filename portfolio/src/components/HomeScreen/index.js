@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Text, Button, View } from "react-native";
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
     const Navigation = useNavigation();
