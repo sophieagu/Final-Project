@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 const PhaseScreen = () => {
 
     return (
-        <Text>Hello</Text>
+        <Text>Hello, you made it to the phasescreen</Text>
     )
 }
 
