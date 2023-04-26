@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
 
   const bolds = StyleSheet.create({
     container: {
-      flex: 1,
       fontWeight: "bold",
       backgroundColor: '#fff',
       alignItems: 'center',
