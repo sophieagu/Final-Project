@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
     const Navigation = useNavigation();
+    const { avgPeriodLength, avgCycleLength } = route.params || {};
+    
     return (
         <View style = {styles.container}>
             <Text style = {bolds.container}>Welcome Back! Choose an option below:</Text> <br></br>
