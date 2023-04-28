@@ -36,6 +36,9 @@ const CycleForm = ( {onSubmit} ) => {
             value={lastPeriodStart}
             onChangeText={(text) => setLastPeriodStart(text)}
             </TextInput>
+            <TouchableOpacity style={styles.button} onPress={handleSave}>
+                <Text style={styles.buttonText}>Save</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -61,7 +64,17 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginTop: 10,
         marginBottom: 5,
-      }
+      },
+      button: {
+        backgroundColor: '#3f51b5',
+        padding: 10,
+        borderRadius: 5,
+      },
+      buttonText: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 18,
+      },
   });
 
 export default CycleForm;
