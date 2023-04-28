@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
-import useNavigation from "@react-navigation/native"; 
+import { useNavigation } from '@react-navigation/native';
 
 const CycleForm = ( {onSubmit} ) => {
     const [cycleLength, setCycleLength] = useState("");
