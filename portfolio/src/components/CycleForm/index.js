@@ -10,7 +10,7 @@ const CycleForm = ( {onSubmit} ) => {
     const Navigation = useNavigation();
 
     const handleSave = () => {
-
+        Navigation.goBack();
     }
 
     return (
