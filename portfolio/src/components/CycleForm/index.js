@@ -23,9 +23,12 @@ const CycleForm = () => {
         const lastLastPeriodLength = Math.floor((endLastLastPeriod.getTime() - startLastLastPeriod.getTime()) / (1000 * 3600 * 24));
 
         const avgPeriodLength = (lastLastPeriodLength + lastPeriodLength) / 2;
-        const avgCycleLength = (lastPeriodStart - lastLastPeriodStart) - 1;
+        const avgCycleLength = (startLastPeriod - startLastLastPeriod) - 1;
         console.log(avgPeriodLength);
-        Navigation.navigate('HomeScreen', {avgPeriodLength, avgCycleLength});
+        Navigation.navigate('App', {
+            screen: 'Home',
+            params: {avgPeriodLength, avgCycleLength}
+        });
     }
 
     return (
