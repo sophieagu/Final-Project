@@ -30,12 +30,12 @@ const CycleForm = () => {
             onChangeText={(text) => setPeriodLength(text)}
             />
             <Text style={styles.label}>Start of last period:</Text>
-            <TextInput>
+            <TextInput
             style={styles.input}
             keyboardType='numeric'
             value={lastPeriodStart}
             onChangeText={(text) => setLastPeriodStart(text)}
-            </TextInput>
+            />
             <TouchableOpacity style={styles.button} onPress={handleSave}>
                 <Text style={styles.buttonText}>Save</Text>
             </TouchableOpacity>
