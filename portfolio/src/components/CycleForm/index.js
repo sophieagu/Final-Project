@@ -16,17 +16,16 @@ const CycleForm = () => {
     const handleSave = () => {
         const startLastPeriod = new Date(lastPeriodStart);
         const endLastPeriod = new Date(lastPeriodEnd);
-        const lastPeriodLength = Math.floor((endLastPeriod.getTime() - startLastPeriod.getTime()) / (1000 * 3600 * 24));
+        const lastPeriodLength = (endLastPeriod.getTime() - startLastPeriod.getTime()) / (1000 * 3600 * 24);
 
         const startLastLastPeriod = new Date(lastLastPeriodStart);
         const endLastLastPeriod = new Date(lastLastPeriodEnd);
-        const lastLastPeriodLength = Math.floor((endLastLastPeriod.getTime() - startLastLastPeriod.getTime()) / (1000 * 3600 * 24));
+        const lastLastPeriodLength = (endLastLastPeriod.getTime() - startLastLastPeriod.getTime()) / (1000 * 3600 * 24);
 
-        const avgPeriodLength = (lastLastPeriodLength + lastPeriodLength) / 2;
-        const avgCycleLength = (startLastPeriod - startLastLastPeriod) - 1;
+        const avgPeriodLength = Math.floor((lastLastPeriodLength + lastPeriodLength) / 2);
+        const avgCycleLength = Math.floor((startLastPeriod - startLastLastPeriod) - 1);
         console.log(avgPeriodLength);
-        Navigation.navigate('App', {
-            screen: 'HomeScreen',
+        Navigation.navigate('HomeScreen', {
             params: {avgPeriodLength, avgCycleLength}
         });
     }
