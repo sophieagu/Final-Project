@@ -5,13 +5,15 @@ import { useNavigation } from '@react-navigation/native';
 const CycleForm = () => {
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
-    const [cycleLength, setCycleLength] = useState("");
-    const [periodLength, setPeriodLength] = useState("");
     const [lastPeriodStart, setLastPeriodStart] = useState("");
+    const [lastPeriodEnd, setLastPeriodEnd] = useState("");
+    const [lastLastPeriodStart, setLastLastPeriodStart] = useState("");
+    const [lastLastPeriodEnd, setLastLastPeriodEnd] = useState("");
 
     const Navigation = useNavigation();
 
     const handleSave = () => {
+
         Navigation.goBack();
     }
 
@@ -31,26 +33,33 @@ const CycleForm = () => {
             value={age}
             onChangeText={(text) => setAge(text)}
             />
-            <Text style={styles.label}>Typical Cycle Length (Days):</Text>
-            <TextInput
-            style={styles.input}
-            keyboardType='numeric'
-            value={cycleLength}
-            onChangeText={(text) => setCycleLength(text)}
-            />
-            <Text style={styles.label}>Typical Period Length (Days):</Text>
-            <TextInput
-            style={styles.input}
-            keyboardType='numeric'
-            value={periodLength}
-            onChangeText={(text) => setPeriodLength(text)}
-            />
             <Text style={styles.label}>Start of last period (MM-DD-YYYY):</Text>
             <TextInput
             style={styles.input}
             keyboardType='numeric'
             value={lastPeriodStart}
             onChangeText={(text) => setLastPeriodStart(text)}
+            />
+            <Text style={styles.label}>End of Last Period (MM-DD-YYYY):</Text>
+            <TextInput
+            style={styles.input}
+            keyboardType='numeric'
+            value={lastPeriodEnd}
+            onChangeText={(text) => setLastPeriodEnd(text)}
+            />
+            <Text style={styles.label}>Start of Period Before Last (MM-DD-YYYY):</Text>
+            <TextInput
+            style={styles.input}
+            keyboardType='numeric'
+            value={lastLastPeriodStart}
+            onChangeText={(text) => setLastLastPeriodStart(text)}
+            />
+            <Text style={styles.label}>End of Period Before Last (MM-DD-YYYY):</Text>
+            <TextInput
+            style={styles.input}
+            keyboardType='numeric'
+            value={lastLastPeriodEnd}
+            onChangeText={(text) => setLastLastPeriodEnd(text)}
             />
             <TouchableOpacity style={styles.button} onPress={handleSave}>
                 <Text style={styles.buttonText}>Save</Text>
