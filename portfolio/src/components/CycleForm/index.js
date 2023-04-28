@@ -45,7 +45,7 @@ const CycleForm = () => {
             value={periodLength}
             onChangeText={(text) => setPeriodLength(text)}
             />
-            <Text style={styles.label}>Start of last period (YYYY-MM-DD):</Text>
+            <Text style={styles.label}>Start of last period (MM-DD-YYY):</Text>
             <TextInput
             style={styles.input}
             keyboardType='numeric'
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginTop: 10,
         marginBottom: 5,
+        justifyContent: 'left',
       },
       button: {
         backgroundColor: '#3f51b5',
