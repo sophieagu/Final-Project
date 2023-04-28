@@ -3,6 +3,8 @@ import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-nativ
 import { useNavigation } from '@react-navigation/native';
 
 const CycleForm = () => {
+    const [name, setName] = useState("");
+    const [age, setAge] = useState("");
     const [cycleLength, setCycleLength] = useState("");
     const [periodLength, setPeriodLength] = useState("");
     const [lastPeriodStart, setLastPeriodStart] = useState("");
@@ -15,21 +17,35 @@ const CycleForm = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>Cycle Length:</Text>
+            <Text style={styles.label}>Name:</Text>
+            <TextInput
+            style={styles.input}
+            keyboardType='ascii-capable'
+            value={name}
+            onChangeText={(text) => setName(text)}
+            />
+            <Text style={styles.label}>Age:</Text>
+            <TextInput
+            style={styles.input}
+            keyboardType='numeric'
+            value={age}
+            onChangeText={(text) => setAge(text)}
+            />
+            <Text style={styles.label}>Typical Cycle Length (Days):</Text>
             <TextInput
             style={styles.input}
             keyboardType='numeric'
             value={cycleLength}
             onChangeText={(text) => setCycleLength(text)}
             />
-            <Text style={styles.label}>Period Length:</Text>
+            <Text style={styles.label}>Typical Period Length (Days):</Text>
             <TextInput
             style={styles.input}
             keyboardType='numeric'
             value={periodLength}
             onChangeText={(text) => setPeriodLength(text)}
             />
-            <Text style={styles.label}>Start of last period:</Text>
+            <Text style={styles.label}>Start of last period (YYYY-MM-DD):</Text>
             <TextInput
             style={styles.input}
             keyboardType='numeric'
