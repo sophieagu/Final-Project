@@ -13,13 +13,13 @@ const CycleForm = () => {
     const Navigation = useNavigation();
 
     const handleSave = () => {
-        const lastPeriodStart = new Date(lastPeriodStart);
-        const lastPeriodEnd = new Date(lastPeriodEnd);
-        const lastPeriodLength = (lastPeriodEnd.getTime() - lastPeriodStart.getTime()) / (1000 * 3600 * 24);
+        const startLastPeriod = new Date(lastPeriodStart);
+        const endLastPeriod = new Date(lastPeriodEnd);
+        const lastPeriodLength = (endLastPeriod.getTime() - startLastPeriod.getTime()) / (1000 * 3600 * 24);
 
-        const lastLastPeriodStart = new Date(lastLastPeriodStart);
-        const lastLastPeriodEnd = new Date(lastLastPeriodEnd);
-        const lastLastPeriodLength = (lastLastPeriodEnd.getTime() - lastLastPeriodStart.getTime()) / (1000 * 3600 * 24);
+        const startLastLastPeriod = new Date(lastLastPeriodStart);
+        const endLastLastPeriod = new Date(lastLastPeriodEnd);
+        const lastLastPeriodLength = (endLastLastPeriod.getTime() - startLastLastPeriod.getTime()) / (1000 * 3600 * 24);
 
         const avgPeriodLength = (lastLastPeriodLength + lastPeriodLength) / 2;
         const avgCycleLength = (lastPeriodStart - lastLastPeriodStart) - 1;
