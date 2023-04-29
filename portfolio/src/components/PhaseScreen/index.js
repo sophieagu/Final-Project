@@ -66,7 +66,6 @@ const PhaseScreen = ( {route} ) => {
             <Text style={styles.titles}> Learn more about the {phase} phase here! </Text>
             <Text style={styles.titles}> Recommended Workouts: </Text>
             <FlatList
-                style={styles.container}
                 data={whichWorkout()}
                 renderItem={renderItem}
             />
