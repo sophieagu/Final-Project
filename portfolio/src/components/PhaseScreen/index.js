@@ -33,10 +33,15 @@ const PhaseScreen = ( {route} ) => {
         {title: "Yoga", type: "Duration"},
         {title: "Pilates", type: "Duration"}
     ]
+
+    
     return (
         <View style={styles.container}>
             <Text style={styles.currentPhase}> Your Current Phase: {currentPhase} </Text>
             <Text style={styles.titles}> Learn more about {phase} here! </Text>
+            <FlatList>
+
+            </FlatList>
 
         </View>
     )
@@ -57,6 +62,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     currentPhase: {
+        flex: 1,
         fontWeight: "bold",
         fontSize: "22pt",
         backgroundColor: '#fff',
