@@ -13,10 +13,10 @@ const HomeScreen = ( {route} ) => {
             <Button title="Update Cycle Information" onPress={() => Navigation.navigate('CycleForm')} Button/> <br></br>
             <Button title="My Calendar"  onPress={() => Navigation.navigate('CalendarScreen')} Button/> <br></br> <br></br>
             <Text style = {styles.titles}>Select a Phase:</Text> <br></br>
-            <Button title="Menstruation"  onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>                
-            <Button title="Follicular Phase"  onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>
-            <Button title="Ovulation" onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>
-            <Button title="Luteal Phase" onPress={() => Navigation.navigate('PhaseScreen')} Button/> <br></br>
+            <Button title="Menstruation"  onPress={() => Navigation.navigate('PhaseScreen', {phase: "menstruation", avgPeriodLength, avgCycleLength})} Button/> <br></br>                
+            <Button title="Follicular Phase"  onPress={() => Navigation.navigate('PhaseScreen', {phase: "follicular", avgPeriodLength, avgCycleLength})} Button/> <br></br>
+            <Button title="Ovulation" onPress={() => Navigation.navigate('PhaseScreen', {phase: "ovulation", avgPeriodLength, avgCycleLength})} Button/> <br></br>
+            <Button title="Luteal Phase" onPress={() => Navigation.navigate('PhaseScreen', {phase: "luteal", avgPeriodLength, avgCycleLength})} Button/> <br></br>
             <StatusBar style="auto" />
         </View>
     );

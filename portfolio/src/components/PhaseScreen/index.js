@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, Text, Button, View } from "react-native";
+import { StyleSheet, Text, Button, View, FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 const PhaseScreen = ( {route} ) => {
@@ -34,8 +34,35 @@ const PhaseScreen = ( {route} ) => {
         {title: "Pilates", type: "Duration"}
     ]
     return (
-        <Text>Hello, you made it to the phasescreen</Text>
+        <View style={styles.container}>
+            <Text style={styles.currentPhase}> Your Current Phase: {currentPhase} </Text>
+            <Text style={styles.titles}> Learn more about {phase} here! </Text>
+
+        </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    titles: {
+      fontWeight: "bold",
+      fontSize: "18pt",
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    currentPhase: {
+        fontWeight: "bold",
+        fontSize: "22pt",
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+  });
 
 export default PhaseScreen;
