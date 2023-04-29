@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 const PhaseScreen = ( {route} ) => {
     const { phase, avgPeriodLength, avgCycleLength } = route.params;
     const [currentPhase, setCurrentPhase] = useState("");
+    const recommendedWorkouts = [];
 
     const menstruationWorkouts = [
         {title: "Walking", type: "Duration"},
@@ -34,11 +35,22 @@ const PhaseScreen = ( {route} ) => {
         {title: "Pilates", type: "Duration"}
     ]
 
+    if (phase == "menstruation") {
+        recommendedWorkouts = menstruationWorkouts;
+    } else if (phase == "follicular") {
+        recommendedWorkouts = follicularWorkouts;
+    } else if (phase == "ovuation") {
+        recommendedWorkouts = ovulationWorkouts;
+    } else if (phase == "luteal") {
+        recommendedWorkouts = lutealWorkouts;
+    }
+    
     
     return (
         <View style={styles.container}>
             <Text style={styles.currentPhase}> Your Current Phase: {currentPhase} </Text>
-            <Text style={styles.titles}> Learn more about {phase} here! </Text>
+            <Text style={styles.titles}> Learn more about the {phase} phase here! </Text>
+            <Text style={styles.titles}> Recommended Workouts: {recommendedWorkouts} </Text>
             <FlatList>
 
             </FlatList>
