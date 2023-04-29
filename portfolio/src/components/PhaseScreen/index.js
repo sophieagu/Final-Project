@@ -2,10 +2,11 @@ import React, {useState} from "react";
 import { StyleSheet, Text, Button, View, FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-const PhaseScreen = ( {route, Navigation} ) => {
+const PhaseScreen = ( {route} ) => {
     const { phase, avgPeriodLength, avgCycleLength } = route.params;
     const [currentPhase, setCurrentPhase] = useState("");
     let recommendedWorkouts = [];
+    const Navigation = useNavigation();
 
     const menstruationWorkouts = [
         {title: "Walking", type: "Duration"},
@@ -36,13 +37,13 @@ const PhaseScreen = ( {route, Navigation} ) => {
     ]
 
     const whichWorkout = () => {
-        if (phase == "menstruation") {
+        if (phase === "menstruation") {
             recommendedWorkouts = menstruationWorkouts;
-        } else if (phase == "follicular") {
+        } else if (phase === "follicular") {
             recommendedWorkouts = follicularWorkouts;
-        } else if (phase == "ovuation") {
+        } else if (phase === "ovulation") {
             recommendedWorkouts = ovulationWorkouts;
-        } else if (phase == "luteal") {
+        } else if (phase === "luteal") {
             recommendedWorkouts = lutealWorkouts;
         }
         return(recommendedWorkouts);
@@ -64,10 +65,10 @@ const PhaseScreen = ( {route, Navigation} ) => {
             <Text style={styles.currentPhase}> Your Current Phase: {currentPhase} </Text>
             <Text style={styles.titles}> Learn more about the {phase} phase here! </Text>
             <Text style={styles.titles}> Recommended Workouts: </Text>
-            <FlatList>
+            <FlatList
                 data={whichWorkout()}
                 renderItem={renderItem}
-            </FlatList>
+            />
         </View>
     )
 }
