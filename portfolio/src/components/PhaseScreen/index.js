@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import { StyleSheet, Text, Button, View, FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-const PhaseScreen = ( {route} ) => {
+const PhaseScreen = ( {route, Navigation} ) => {
     const { phase, avgPeriodLength, avgCycleLength } = route.params;
     const [currentPhase, setCurrentPhase] = useState("");
-    const recommendedWorkouts = [];
+    let recommendedWorkouts = [];
 
     const menstruationWorkouts = [
         {title: "Walking", type: "Duration"},
@@ -35,14 +35,27 @@ const PhaseScreen = ( {route} ) => {
         {title: "Pilates", type: "Duration"}
     ]
 
-    if (phase == "menstruation") {
-        recommendedWorkouts = menstruationWorkouts;
-    } else if (phase == "follicular") {
-        recommendedWorkouts = follicularWorkouts;
-    } else if (phase == "ovuation") {
-        recommendedWorkouts = ovulationWorkouts;
-    } else if (phase == "luteal") {
-        recommendedWorkouts = lutealWorkouts;
+    const whichWorkout = () => {
+        if (phase == "menstruation") {
+            recommendedWorkouts = menstruationWorkouts;
+        } else if (phase == "follicular") {
+            recommendedWorkouts = follicularWorkouts;
+        } else if (phase == "ovuation") {
+            recommendedWorkouts = ovulationWorkouts;
+        } else if (phase == "luteal") {
+            recommendedWorkouts = lutealWorkouts;
+        }
+        return(recommendedWorkouts);
+    }
+   
+
+    const renderItem = ({item}) => {
+        return(
+            <Button 
+            title= {item.title}
+            onPress= {() => Navigation.navigate(item.type === 'Repetition' ? 'RepetitionExercise' : 'DurationExercise', { exercise: item })}
+        />
+        )
     }
     
     
@@ -50,11 +63,11 @@ const PhaseScreen = ( {route} ) => {
         <View style={styles.container}>
             <Text style={styles.currentPhase}> Your Current Phase: {currentPhase} </Text>
             <Text style={styles.titles}> Learn more about the {phase} phase here! </Text>
-            <Text style={styles.titles}> Recommended Workouts: {recommendedWorkouts} </Text>
+            <Text style={styles.titles}> Recommended Workouts: </Text>
             <FlatList>
-
+                data={whichWorkout()}
+                renderItem={renderItem}
             </FlatList>
-
         </View>
     )
 }
@@ -68,15 +81,14 @@ const styles = StyleSheet.create({
     },
     titles: {
       fontWeight: "bold",
-      fontSize: "18pt",
+      fontSize: "18px",
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
     },
     currentPhase: {
-        flex: 1,
         fontWeight: "bold",
-        fontSize: "22pt",
+        fontSize: "22px",
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
