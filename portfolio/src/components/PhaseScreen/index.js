@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { StyleSheet, Text, Button, View, FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-const PhaseScreen = ( {route} ) => {
+const PhaseScreen = ( {route, navigation} ) => {
     const { phase, avgPeriodLength, avgCycleLength } = route.params;
     const [currentPhase, setCurrentPhase] = useState("");
     let recommendedWorkouts = [];
@@ -54,7 +54,7 @@ const PhaseScreen = ( {route} ) => {
         return(
             <Button 
             title= {item.title}
-            onPress= {() => Navigation.navigate(item.type === 'Repetition' ? 'RepetitionExercise' : 'DurationExercise', { exercise: item })}
+            onPress= {() => navigation.navigate(item.type === 'Repetition' ? 'RepetitionExercise' : 'DurationExercise', { exercise: item })}
         />
         )
     }
