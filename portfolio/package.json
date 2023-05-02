@@ -9,8 +9,6 @@
     "web": "expo start --web",
     "deploy": "gh-pages -d web-build",
     "predeploy": "expo export:web"
-   
-    
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
@@ -31,10 +29,9 @@
     "react-navigation": "^4.4.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "gh-pages": "^5.0.0"
   },
   "private": true,
-  "homepage": "http://sophieagu.github.io/final-project"
-  
-  
+  "homepage": "http://sophieagu.github.io/Final-Project"
 }
